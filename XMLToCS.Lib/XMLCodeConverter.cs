@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Xml.Linq;
 
@@ -48,13 +48,14 @@ namespace XMLToCS.Lib
             }
             else {
                 if (!string.IsNullOrEmpty(node.Value)) {
-                    sb.Append($"{Tab(indentation + 1)}, \"{node.Value}\")");
+                    sb.Append($", \"{node.Value.Trim()}\")");
                 }
                 else {
-                    sb.Append($"{Tab(indentation + 1)})");
+                    sb.Append($")");
                 }
             }
         }
 
     }
 }
+
